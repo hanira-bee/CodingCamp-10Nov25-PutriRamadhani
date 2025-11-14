@@ -1,0 +1,169 @@
+body{
+    justify-items: center;
+    align-content: center;
+    height: 100vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.todos {
+    justify-content: center;
+    /* background-color: transparent; */
+    padding: 20px 30px;
+    border-radius: 10px;
+    border-color: rgb(196, 135, 107);
+    width: 480px;
+    text-align: center;
+}
+
+.header-h1 {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    justify-items: center;
+}
+
+.form-section {
+    display: flex;
+    gap: 8px;
+    
+}
+
+.form-section input:hover {
+    border-color: rgb(196, 135, 107);
+}
+
+.form-section button:hover {
+    background-color:rgb(196, 135, 107);
+    color: whitesmoke;
+}
+
+.form-section .form-add {
+    margin: 10px 10px 10px 0;
+    padding: 7px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: rgb(228, 184, 164);
+}
+
+.form-section .form-due {
+    margin: 10px 0 10px 0;
+    padding: 7px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: rgb(228, 184, 164);
+}
+
+.form-section .addbtn {
+    font-size: 24px;
+    width: 40px;
+    color: whitesmoke;
+    cursor: pointer;
+    margin: 10px 0;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: rgb(241, 221, 214);
+    background-color: rgb(228, 184, 164);
+    transition: background-color 0.25s ease;
+}
+
+.action-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.action-section button:hover {
+    background-color: rgb(196, 135, 107);
+    transition: background-color 0.25s ease;
+}
+
+.action-section .filter-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    /* border-color: rgb(241, 221, 214); */
+    background-color: rgb(241, 221, 214);
+    color:black;
+    cursor: pointer;
+}
+
+.action-section .hidden {
+    display: none;
+}
+
+.action-section .delete-all-btn {
+    padding: 10px 15px;
+    border: solid;
+    border-radius: 10px;
+    border-color:rgb(241, 221, 214);
+    background-color:rgb(228, 184, 164);
+}
+
+.todo-section {
+    margin: 10px 0 0 0;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgb(241, 221, 214);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#tasks-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgb(241, 221, 214);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#tasks-table thead {
+    background-color: rgb(228, 184, 164);
+}
+
+#tasks-table th {
+    text-align: left;
+    font-size: 14px;
+    padding: 15px 20px;
+    font-weight: 600;
+    color: rgb(36, 14, 4);
+}
+
+#tasks-table tbody tr {
+    border-bottom: 1px solid rgb(228, 184, 164);
+}
+
+#tasks-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+#tasks-table #tasks-body td {
+    padding: 10px 15px;
+    color: rgb(196, 135, 107);
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.status-select {
+    background-color: rgb(228, 184, 164);
+    border: none;
+    color: rgb(36, 14, 4);
+    padding: 6px 8px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.actions-btn {
+    background-color: transparent;
+    border: none;
+    color: rgb(241, 221, 214);
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 14px;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.action-btn:hover {
+    background-color: rgb(228, 184, 164);
+}

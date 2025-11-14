@@ -1,11 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Todo List Apps - Putri Ramadhani</title>
+
+    <!-- Link to externeal CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Tailwind CSS CDN -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+
 </head>
+
 <body>
-    
+    <div class="todos">
+        <!-- Header section -->
+        <header>
+            <h1 class="header-h1">Todo List Apps</h1>
+        </header>
+
+        <!-- Main content goes here -->
+        <main>
+            <!-- Form Section -->
+            <section class="form-section">
+                <form action="">
+                    <!-- Todo Input -->
+                    <input class="form-add" type="text" placeholder="Add a todo...">
+
+                    <!-- Data Input -->
+                    <input class="form-due" type="datetime-local" placeholder="Enter due date">
+                </form>
+
+                <!-- Add Button -->
+                <button type="button" onclick="addTodo();" class="addbtn">
+                    +
+                </button>
+            </section>
+
+            <!-- Action Section -->
+            <section class="action-section">
+                <!-- Filter Options -->
+                <button class="filter-btn">
+                    Filter
+                </button>
+                <select class="hidden" id="filter-select">
+                    <option value="nearest">Sort by nearest due date</option>
+                    <option value="letter">Sort by letter</option>
+                </select>
+
+                <!-- Clear All Button -->
+                <button class="delete-all-btn">
+                    Delete All
+                </button>
+            </section>
+
+            <!-- Todo List Section -->
+            <section class="todo-section">
+                <table id="tasks-table" class="" role="">
+                    <thead>
+                        <tr role="row">
+                            <th>Task</th>
+                            <th>Due Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tasks-body">
+                        <tr role="" class="no-task-row">
+                            <td colspan="4">No task found</td>
+                        </tr>
+                    </tbody>
+                    </table>
+            </section>
+        </main>
+
+        <section>
+        <!-- Footer Section -->
+        <footer>
+            <p>
+                &copy; 2025 Todo List Putri Apps
+            </p>
+        </footer>
+        </section>
+        <!-- Link to external JavaScript file -->
+        <script src="js/script.js"></script>
+    </div>
 </body>
+
 </html>
