@@ -27,14 +27,14 @@
             <section class="form-section">
                 <form action="">
                     <!-- Todo Input -->
-                    <input class="form-add" type="text" placeholder="Add a todo...">
+                    <input class="form-add" id="task-input" type="text" placeholder="Add a todo...">
 
                     <!-- Data Input -->
-                    <input class="form-due" type="datetime-local" placeholder="Enter due date">
+                    <input class="form-due" id="due-date-input" type="datetime-local" placeholder="Enter due date">
                 </form>
 
                 <!-- Add Button -->
-                <button type="button" onclick="addTodo();" class="addbtn">
+                <button type="button" id="add-task-btn" class="addbtn">
                     +
                 </button>
             </section>
@@ -42,7 +42,7 @@
             <!-- Action Section -->
             <section class="action-section">
                 <!-- Filter Options -->
-                <button class="filter-btn">
+                <button class="filter-btn" id="filter-btn">
                     Filter
                 </button>
                 <select class="hidden" id="filter-select">
@@ -51,7 +51,7 @@
                 </select>
 
                 <!-- Clear All Button -->
-                <button class="delete-all-btn">
+                <button class="delete-all-btn" id="delete-all-btn">
                     Delete All
                 </button>
             </section>
