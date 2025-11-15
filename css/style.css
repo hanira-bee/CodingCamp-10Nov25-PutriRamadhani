@@ -43,7 +43,7 @@ body{
 }
 
 .input-section input[type="datetime-local"] {
-    max-width: 140px;
+    max-width: 150px;
 }
 
 .input-section input::placeholder {
@@ -165,7 +165,7 @@ body{
 
 #tasks-table #tasks-body td {
     padding: 10px 15px;
-    color: rgb(196, 135, 107);
+    color: rgb(36, 14, 4);
     font-size: 14px;
     vertical-align: middle;
 }
@@ -183,7 +183,7 @@ body{
 .actions-btn {
     background-color: transparent;
     border: none;
-    color: rgb(241, 221, 214);
+    color: rgb(36, 14, 4);
     font-weight: bold;
     cursor: pointer;
     margin-right: 10px;
@@ -192,6 +192,7 @@ body{
     border-radius: 6px;
 }
 
-.action-btn:hover {
+.actions-btn:hover {
     background-color: rgb(228, 184, 164);
+
 }

@@ -41,38 +41,34 @@
             </select>
 
             <!-- Clear All Button -->
-            <button class="delete-all-btn" id="delete-all-btn">
-                Delete All
-            </button>
+            <button id="delete-all-btn">Delete All</button>
         </section>
 
-        <!-- Todo List Section -->
-        <section class="todo-section">
-            <table id="tasks-table" class="" role="">
-                <thead>
-                    <tr role="row">
-                        <th>Task</th>
-                        <th>Due Date</th>
-                        <th>Status</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody id="tasks-body">
-                    <tr role="" class="no-task-row">
-                        <td colspan="4">No task found</td>
-                    </tr>
-                </tbody>
-                </table>
-        </section>
+        <!-- Todo List Table -->
+        <table id="tasks-table">
+            <thead>
+                <tr role="row">
+                    <th>Task</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tasks-body">
+                <tr role="" class="no-task-row">
+                    <td colspan="4">No task found</td>
+                </tr>
+            </tbody>
+            </table>
 
-        <section>
         <!-- Footer Section -->
-        <footer>
-            <p>
-                &copy; 2025 Todo List Putri Apps
-            </p>
-        </footer>
-        </section>
+        <div>
+            <footer>
+                <p>
+                    &copy; 2025 Todo List Putri Apps
+                </p>
+            </footer>
+        </div>
         <!-- Link to external JavaScript file -->
         <script src="js/script.js"></script>
     </div>

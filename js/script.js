@@ -1,14 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
     const taskInput = document.getElementById('task-input');
     const dueDateInput = document.getElementById('due-date-input');
-    const addTaskBtn = document.getElementById('add-task-btn)');
+    const addTaskBtn = document.getElementById('add-task-btn');
     const tasksBody = document.getElementById('tasks-body');
     const deleteAllBtn = document.getElementById('delete-all-btn');
     const filterBtn = document.getElementById('filter-btn');
     const filterSelect = document.getElementById('filter-select');
 
-    let tasks = []
+    let tasks = [];
 
+    // Render tasks in table
     function renderTasks() {
         tasksBody.innerHTML = '';
 
@@ -23,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        tasks.foreach((task,idx) => {
+        tasks.forEach((task, idx) => {
             const row = document.createElement('tr');
 
             // Task description
@@ -40,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const statusTd = document.createElement('td');
             const statusSelect = document.createElement('select');
             statusSelect.className = 'status-select';
-            ['Not yet', 'In progress', 'Done'].forEach(statusOption => {
+            ['Not yet', 'On going', 'Done'].forEach(statusOption => {
                 const option = document.createElement('option');
                 option.value = statusOption.toLowerCase().replace(' ', '-');
                 option.textContent = statusOption;
@@ -56,13 +57,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 task.status = statusSelect.value;
             });
 
-            // Actions contain change and delete
+            // Actions (Edit and Delete)
             const actionsTd = document.createElement('td');
 
             // Edit button
             const editBtn = document.createElement('button');
             editBtn.textContent = 'Edit';
-            editBtn.className = 'action-btn';
+            editBtn.className = 'actions-btn';
             actionsTd.appendChild(editBtn);
 
             // Delete button
@@ -73,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             row.appendChild(actionsTd);
 
-            // Edit mode variable
+            // Edit mode variables
             let isEditing = false;
 
             editBtn.addEventListener('click', () => {
@@ -83,13 +84,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     editBtn.textContent = 'Save';
 
                     // Replace task text with input
-                    const taskInputEdit = document.createElement ('input');
+                    const taskInputEdit = document.createElement('input');
                     taskInputEdit.type = 'text';
                     taskInputEdit.value = task.name;
                     taskTd.textContent = '';
                     taskTd.appendChild(taskInputEdit);
 
-                    //Replace due date text with data input
+                    // Replace due date text with date input
                     const dueDateInputEdit = document.createElement('input');
                     dueDateInputEdit.type = 'date';
                     dueDateInputEdit.value = task.dueDate;
@@ -97,38 +98,37 @@ document.addEventListener('DOMContentLoaded', () => {
                     dueDateTd.appendChild(dueDateInputEdit);
 
                 } else {
-                    // save new values
+                    // Save new values
                     const newTaskName = taskTd.querySelector('input').value.trim();
                     const newDueDate = dueDateTd.querySelector('input').value;
 
                     if (newTaskName === '' || newDueDate === '') {
-                        alert('Task name and due date cannot be empty.');
+                        alert('Task and Due Date cannot be empty.');
                         return;
+                    }
+
+                    task.name = newTaskName;
+                    task.dueDate = newDueDate;
+
+                    isEditing = false;
+                    editBtn.textContent = 'Edit';
+
+                    renderTasks();
                 }
+            });
 
-                task.name = newTaskName;
-                task.dueDate = newDueDate;
-
-                isEditing = false;
-                editBtn.textContent = 'Edit';
-
+            deleteBtn.addEventListener('click', () => {
+                tasks.splice(idx, 1);
                 renderTasks();
+            });
 
-            } 
+            tasksBody.appendChild(row);
         });
-
-        deleteBtn.addEventListener('click', () => {
-            tasks.splice(idx,1);
-            renderTasks();
-        });
-
-        tasksBody.appendChild(row);
-    });
-}
+    }
 
     // Add task
     addTaskBtn.addEventListener('click', () => {
-        const taskName= taskInput.value.trim();
+        const taskName = taskInput.value.trim();
         const dueDate = dueDateInput.value;
 
         if (!taskName || !dueDate) {
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        tasks.push ({
+        tasks.push({
             name: taskName,
             dueDate: dueDate,
             status: 'not-yet'
@@ -169,11 +169,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Filter and sort tasks
     filterSelect.addEventListener('change', () => {
         if (filterSelect.value === 'nearest') {
-            tasks.sort((a,b) => new Date(a.dueDate) - new Date(b.dueDate));
-      } else if (filterSelect.value === 'letter') {
-        tasks.sort((a,b) => a.name.localeCompare(b.name));
-      }
-      renderTasks();
+            tasks.sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate));
+        } else if (filterSelect.value === 'letter') {
+            tasks.sort((a, b) => a.name.localeCompare(b.name));
+        }
+        renderTasks();
     });
 
     // Initial render
