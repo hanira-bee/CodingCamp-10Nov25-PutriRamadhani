@@ -5,7 +5,7 @@ body{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.todos {
+.todo-container {
     justify-content: center;
     /* background-color: transparent; */
     padding: 20px 30px;
@@ -15,45 +15,47 @@ body{
     text-align: center;
 }
 
-.header-h1 {
+.todo-conatiner h1 {
     display: block;
     font-size: 2em;
     font-weight: bold;
     justify-items: center;
+    margin-bottom: 25px;
 }
 
-.form-section {
+.input-section {
     display: flex;
     gap: 8px;
+    margin-bottom: 15px;
     
 }
 
-.form-section input:hover {
-    border-color: rgb(196, 135, 107);
-}
-
-.form-section button:hover {
-    background-color:rgb(196, 135, 107);
-    color: whitesmoke;
-}
-
-.form-section .form-add {
+.input-section input[type="text"],
+.input-section input[type="datetime-local"] {
     margin: 10px 10px 10px 0;
     padding: 7px;
     border-radius: 10px;
     border-style: solid;
     border-color: rgb(228, 184, 164);
+    color: rgb(36, 14, 4);
+    font-size: 14px;
+    flex: 1;
 }
 
-.form-section .form-due {
-    margin: 10px 0 10px 0;
-    padding: 7px;
-    border-radius: 10px;
-    border-style: solid;
-    border-color: rgb(228, 184, 164);
+.input-section input[type="datetime-local"] {
+    max-width: 140px;
 }
 
-.form-section .addbtn {
+.input-section input::placeholder {
+    color: rgb(98, 90, 86);
+    opacity: 0.7;
+}
+
+.input-section input:hover {
+    border-color: rgb(196, 135, 107);
+}
+
+.input-section button {
     font-size: 24px;
     width: 40px;
     color: whitesmoke;
@@ -66,36 +68,62 @@ body{
     transition: background-color 0.25s ease;
 }
 
-.action-section {
-    display: flex;
-    justify-content: space-between;
+.input-section button:hover {
+    background-color:rgb(196, 135, 107);
+    color: whitesmoke;
 }
 
-.action-section button:hover {
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.controls button {
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(36, 14, 4);
+    border-style: solid;
+    border-color: rgb(241, 221, 214);
+    border-radius: 6px;
+    padding: 8px 16px;
+    cursor: pointer;
+    background-color: rgb(228, 184, 164);
+    transition: background-color 0.25s ease;
+}
+
+.controls button:hover {
     background-color: rgb(196, 135, 107);
     transition: background-color 0.25s ease;
 }
 
-.action-section .filter-btn {
-    padding: 5px 10px;
+#filter-select {
+    margin-left: 10px;
+    padding: 6px 10px;
     border: none;
-    border-radius: 10px;
+    border-radius: 6px;
     /* border-color: rgb(241, 221, 214); */
-    background-color: rgb(241, 221, 214);
-    color:black;
+    background-color: rgb(98, 90, 86);
+    color:whitesmoke;
+    font-weight: bold;
     cursor: pointer;
 }
 
-.action-section .hidden {
+.hidden {
     display: none;
 }
 
-.action-section .delete-all-btn {
+#delete-all-btn {
     padding: 10px 15px;
     border: solid;
     border-radius: 10px;
     border-color:rgb(241, 221, 214);
     background-color:rgb(228, 184, 164);
+}
+
+#delete-all-btn:hover {
+    background-color: rgb(196, 135, 107);
+    transition: background-color 0.25s ease;
 }
 
 .todo-section {

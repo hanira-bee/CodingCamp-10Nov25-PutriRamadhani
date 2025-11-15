@@ -15,66 +15,55 @@
 </head>
 
 <body>
-    <div class="todos">
+    <div class="todo-container">
         <!-- Header section -->
-        <header>
-            <h1 class="header-h1">Todo List Apps</h1>
-        </header>
+        <h1 class="header-h1">Todo List Apps</h1>
 
-        <!-- Main content goes here -->
-        <main>
-            <!-- Form Section -->
-            <section class="form-section">
-                <form action="">
-                    <!-- Todo Input -->
-                    <input class="form-add" id="task-input" type="text" placeholder="Add a todo...">
+        <!-- Input section-->
+        <section class="input-section">
+            <!-- Todo Input -->
+            <input id="task-input" type="text" placeholder="Add a todo...">
 
-                    <!-- Data Input -->
-                    <input class="form-due" id="due-date-input" type="datetime-local" placeholder="Enter due date">
-                </form>
+            <!-- Data Input -->
+            <input id="due-date-input" type="datetime-local" placeholder="Enter due date">
 
-                <!-- Add Button -->
-                <button type="button" id="add-task-btn" class="addbtn">
-                    +
-                </button>
-            </section>
+            <!-- Add Button -->
+            <button id="add-task-btn">+</button>
+        </section>
 
-            <!-- Action Section -->
-            <section class="action-section">
-                <!-- Filter Options -->
-                <button class="filter-btn" id="filter-btn">
-                    Filter
-                </button>
-                <select class="hidden" id="filter-select">
-                    <option value="nearest">Sort by nearest due date</option>
-                    <option value="letter">Sort by letter</option>
-                </select>
+        <!-- Actions Section, to change and delete task-->
+        <section class="controls">
+            <!-- Filter Options -->
+            <button class="filter-btn" id="filter-btn">Filter</button>
+            <select class="hidden" id="filter-select">
+                <option value="nearest">Sort by nearest due date</option>
+                <option value="letter">Sort by letter</option>
+            </select>
 
-                <!-- Clear All Button -->
-                <button class="delete-all-btn" id="delete-all-btn">
-                    Delete All
-                </button>
-            </section>
+            <!-- Clear All Button -->
+            <button class="delete-all-btn" id="delete-all-btn">
+                Delete All
+            </button>
+        </section>
 
-            <!-- Todo List Section -->
-            <section class="todo-section">
-                <table id="tasks-table" class="" role="">
-                    <thead>
-                        <tr role="row">
-                            <th>Task</th>
-                            <th>Due Date</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tasks-body">
-                        <tr role="" class="no-task-row">
-                            <td colspan="4">No task found</td>
-                        </tr>
-                    </tbody>
-                    </table>
-            </section>
-        </main>
+        <!-- Todo List Section -->
+        <section class="todo-section">
+            <table id="tasks-table" class="" role="">
+                <thead>
+                    <tr role="row">
+                        <th>Task</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="tasks-body">
+                    <tr role="" class="no-task-row">
+                        <td colspan="4">No task found</td>
+                    </tr>
+                </tbody>
+                </table>
+        </section>
 
         <section>
         <!-- Footer Section -->
