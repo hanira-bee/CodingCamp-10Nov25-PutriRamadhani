@@ -92,8 +92,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     // Replace due date text with date input
                     const dueDateInputEdit = document.createElement('input');
-                    dueDateInputEdit.type = 'date';
-                    dueDateInputEdit.value = task.dueDate;
+                    dueDateInputEdit.type = 'datetime-local';
+                    dueDateInputEdit.value = task.dueDate.replace(' ', 'T');
                     dueDateTd.textContent = '';
                     dueDateTd.appendChild(dueDateInputEdit);
 
@@ -172,6 +172,15 @@ document.addEventListener('DOMContentLoaded', () => {
             tasks.sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate));
         } else if (filterSelect.value === 'letter') {
             tasks.sort((a, b) => a.name.localeCompare(b.name));
+        } else if (filterSelect.value === 'status-done') {
+            const order = {'done': 1, 'on-going': 2, 'not-yet': 3};
+            tasks.sort((a, b) => order[a.status] - order[b.status]);
+        } else if (filterSelect.value === 'status-ongoing') {
+            const order = {'on-going': 1, 'done': 2, 'not-yet': 3};
+            tasks.sort((a, b) => order[a.status] - order[b.status]);
+        } else if (filterSelect.value === 'status-notyet') {
+            const order = {'not-yet': 1, 'on-going': 2, 'done': 3};
+            tasks.sort((a, b) => order[a.status] - order[b.status]);
         }
         renderTasks();
     });
