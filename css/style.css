@@ -98,7 +98,8 @@ body{
 }
 
 #filter-select {
-    margin-left: 10px;
+    justify-self: left;
+    margin-left: 5px;
     padding: 6px 10px;
     border: none;
     border-radius: 6px;
